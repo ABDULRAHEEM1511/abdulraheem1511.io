@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Home Page</title>
+    <link rel="stylesheet" href="next.html">
+</head>
+<body>
+    <div class="container">
+        <h1>Personal Information</h1>
+        <form id="applicationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required pattern="[A-Za-z]+" title="Only alphabetic characters are allowed."><br><br>
+
+            <label for="middleInitial">Middle Initial:</label>
+            <input type="text" id="middleInitial" name="middleInitial" pattern="[A-Za-z]?" title="Only one alphabetic character is allowed."><br><br>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required pattern="[A-Za-z]+" title="Only alphabetic characters are allowed."><br><br>
+
+            <label for="country">I am from:</label><br><br>
+            <select id="country" name="country" required>
+                <option value="">Select the country</option>
+                <option value="Germany">Germany</option>
+                <option value="UK">UK</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="Other">Other</option>
+            </select><br><br>
+
+
+            <label for="matriculation">Matriculation Number:</label>
+            <form id="numberForm">
+                <label for="numberInput">Number:</label>
+                <input type="number" id="numberInput" name="numberInput" required min="0000000000" max="9999999999" oninput="limitInput(this)" placeholder="Enter up to 10 digits">
+                <button type="submit" class = "btn">Submit</button>
+            </form>
+            <label for="semester">Semester:</label><br><br>
+            <select id="samester" name="semester" required>
+                <option value="">Select the Semester number</option>
+                <option value="one">1</option>
+                <option value="two">2</option>
+                <option value="three">3</option>
+                <option value="four">4</option>
+                <option value="five">5</option>
+                <option value="six">6</option>
+            </select><br><br>
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email" placeholder="example@example.com" required>
+    </form>
+
+    <script>
+        function validateEmail() {
+            const email = document.getElementById('email').value;
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+            alert('Thank you! Your email has been received.');
+            return true;
+        }
+    </script>
+
+            <br><br><label for="program">Graduate Program:</label>
+            <select id="program" name="program" required>
+                <option value="">Select your program</option>
+                <option value="Big Data Analysis">Big Data Analysis</option>
+                <option value="Artificial Intelligence">Artificial Intelligence</option>
+                <option value="Data Science">Data Science</option>
+            </select><br><br>
+
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" required><br><br>
+
+
+            <fieldset>
+                <legend>When I finish my study, I will ;</legend>
+                <input type="radio" id="return" name="mode" value="return" required>
+                <label for="return">return to my country</label>
+                <input type="radio" id="Job" name="mode" value="Job">
+                <label for="job">Find a Job in Europe</label>
+                <input type="radio" id="Training" name="mode" value="Training">
+                <label for="Training">Do the Practical trianing and then I decide</label>
+            </fieldset><br><br>
+            <div class="container">
+                <form id="checklistForm">
+                    <legend>I have heared this graduate program from:</legend>
+                    <label>
+                        <input type="checkbox" name="interests" value="Media"> Media
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="interests" value="Advertisement"> Advertisement
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="interests" value="Agency"> Agency
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="interests" value="Other"> Other
+                    </label><br><br>
+                    
+                </form>
+            </div>
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="5" required></textarea><br><br>
+
+                
+               <center><input type="submit" value="Next page" class="btn" onclick="window.location.href='next.html';"><br><br></center>
+        </form>
+    </div>
+    <script src="document.js"></script>
+</body>
+</html>
